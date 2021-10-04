@@ -15,7 +15,6 @@ int main()
 {
 int sockfd,connfd;
 struct sockaddr_in serv_addr;
-//struct hostent *server;
 sockfd=socket(AF_INET,SOCK_STREAM,0);
 if (sockfd == -1) 
 {
@@ -24,12 +23,10 @@ exit(0);
 }
 else
 printf("Socket successfully created..\n");
-
 bzero(&serv_addr, sizeof(serv_addr));
 serv_addr.sin_family=AF_INET;
 serv_addr.sin_addr.s_addr=inet_addr("127.0.0.1");
 serv_addr.sin_port=htons(SERV_TCP_PORT);
-
 if (connect(sockfd, (SA*)&serv_addr, sizeof(serv_addr)) != 0)
 {
 printf("connection with the server failed...\n");
@@ -37,7 +34,6 @@ exit(0);
 }
 else
 printf("connected to the server..\n");
-
 char buf[1000]={'\0'};
 char k[1000]={'\0'};
 int ack=0,flag=0;
@@ -86,9 +82,7 @@ while(1)
 		}
 	}
 	if(flag==0)
-	{
-		printf("Timeout...sending again!\n");
-	}
+	printf("Timeout...sending again!\n");
 	else
 	{
 		if(k[strlen(k)-1]=='0')
@@ -106,8 +100,6 @@ while(1)
    *buf='\0';
    *k='\0';
 }
-
 close(sockfd);
-return 0;
 }
 
