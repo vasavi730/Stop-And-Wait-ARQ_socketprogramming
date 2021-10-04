@@ -1,3 +1,8 @@
+// Used in Connection-oriented communication.
+// It offers error and flow control
+// It is used in Data Link and Transport Layers
+// Stop and Wait ARQ mainly implements Sliding Window Protocol concept with Window Size 1
+
 #include<stdio.h>
 #include<string.h>
 #include<sys/types.h>
