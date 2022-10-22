@@ -104,7 +104,7 @@ while(1)
    flag=0;
    *buf='\0';
    *k='\0';
-}
+}=
 close(sockfd);
 }
 
